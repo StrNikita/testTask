@@ -50,7 +50,12 @@ section {
 	height: 150px;
 	margin: 10px auto;
 	position: relative;
-	
+}
+.photoArea p {
+	width: 300px;
+	position: absolute;
+	left: 160px;
+	bottom: 0;
 }
 .photoAreaSpan {
 	position: absolute;
@@ -76,11 +81,14 @@ section {
 
 
 
-.fullSizePhoto {
-	widows: 600px;
+#fullSizePhotoArea {
+	width: 600px;
 	height: 600px;
-	position: absolute;
+	left: 50%;
+	top: 50%;
+	position: fixed;
 	transform: translate(-50%,-50%);
+	z-index: 111;
 }
 
 
