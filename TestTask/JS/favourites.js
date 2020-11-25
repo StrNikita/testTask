@@ -61,7 +61,7 @@ function createFavouritesPhoto() { // create DOM for out selected photos
 		photoSpan.className = 'photoAreaSpan';
 		photoSpan.id = photos[item]['id'];
 		if (selectedPhotos !== null){
-				photoSpan.classList.add('selected');
+			photoSpan.classList.add('selected');
 		}
 		
 

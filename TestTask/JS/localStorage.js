@@ -4,16 +4,14 @@ let selectedPhotosArray;
 if (selectedPhotos!== null) {
 	selectedPhotosArray = selectedPhotos; // if we already have photos in localStorage add it;
 } else {
-	selectedPhotosArray = []; // if not create empty array
+	selectedPhotosArray = []; // if not, create empty array
 }
 
 function toLocalStorage(target) { 
 	if (target.classList[1] === 'selected'){ // if our photo already selected delete it from array
 		target.classList.remove('selected');
-		console.log(selectedPhotosArray);
 		let positionItem = selectedPhotosArray.indexOf(target.id);
 		if (positionItem !== -1) {
-			console.log(positionItem);
 			selectedPhotosArray.splice(positionItem,1);
 		}
 	} else {

@@ -26,11 +26,11 @@ catalogLink.onclick = () => {  // show/hide catalog section
 
 // conditions of clicking on catalog sections
 
-usersList.onclick = (e) => { // 
+usersList.onclick = (e) => {
 	target = e.target;
 
 	if ((target.classList[0] === 'user')) { // if user click on name
-		if (!target.nextSibling) { // if we don't have list of alboms
+		if (!target.nextSibling) { // if we don't have list of albums
 			target.classList.add('open');
 			getAlbumsData(target,albumURL);
 		} else {  // just some condition for display/hide alboms lists	
@@ -99,6 +99,7 @@ function getAlbumsData(target) {
 
 function createAlbumsList(jsonObj, target) { // creating DOM for alboms list
 	let albumMainUl = document.createElement('ul');
+	albumMainUl.style.display = 'block';
 	target.parentNode.append(albumMainUl);
 	for(let i = 0; i < jsonObj.length; i++){
 		let albumUl = document.createElement('ul');
@@ -152,9 +153,9 @@ function createPhotos(jsonObj, target) {
 
 
 function updateStars(target) { // update stars nealy photos
-	document.querySelectorAll('span').forEach((item) => {
+	document.querySelectorAll('span').forEach((item)=> {
 		if (item.classList[2] !== null){
-			if (selectedPhotos.indexOf(String(item)) === -1){
+			if (selectedPhotos.indexOf(String(item.id)) === -1){
 				item.classList.remove('selected');
 			}
 		}
